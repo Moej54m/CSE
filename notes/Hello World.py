@@ -1,3 +1,4 @@
+""""""
 print("Hello World!")
 
 # This is a comment. This has no effect on the code
@@ -66,6 +67,33 @@ real_age = int(input("How old are you again?"))
 
 
 
+
+
+
+
+
+
+
+
+
+
+f(1)
+f(5)
+f(5000)
+
+
+# Distance formula
+def distance(x1, x2, y1, y2)
+    dist= ((x2-x1) **2 + (y2-y1)**2)**(1/2)
+print(dist)
+
+
+distance(0, 0, 3, 4)
+distance(0, 0, 5, 12))
+
+# Loops
+for i in range(5);# This gives the numbers 0 through 4
+ say_it()
 
 
 
