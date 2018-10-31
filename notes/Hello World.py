@@ -92,8 +92,58 @@ distance(0, 0, 3, 4)
 distance(0, 0, 5, 12))
 
 # Loops
-for i in range(5);# This gives the numbers 0 through 4
+for i in range(5); # This gives the numbers 0 through 4
  say_it()
+
+
+
+
+while a < 10
+    print(a)
+a *=0 # This is the same as saying a = a + 1
+
+
+""
+For loops - Use when you know exactly how many iterations
+While loops - Use when you don't know how many iterations
+"""
+
+
+# Control Structures (If statements)
+sunny = False 
+if sunny:
+  print("Go Outside)
+  if percentage >= 90:
+   return "A"
+   else:
+   return "F"
+   
+   
+   
+   your_grade = grade_calc(82)
+   print(your_grade)
+
+def grade_calc(percentage):
+elif percentage >= 90:
+return "A"
+elif percentage>= 80:
+return "B"
+elif percentage >= 70:
+return "C"
+elif percentage >= 60:
+return "D"
+else:
+  return "F"
+  
+# "RANDOM" Notes
+import random # thIS should be line 1
+peint(random.randint(0,100))
+
+
+
+
+
+
 
 
 
