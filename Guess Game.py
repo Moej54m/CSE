@@ -1,18 +1,21 @@
 import random
 
-r = random.randint(0, 10)
+r = random.randint(1, 10)
 guesses_left = 5
-Playing = True
+playing = True
 print("Think of a number from 1 to 10")
 
 while guesses_left > 0 and playing:
     guess = int(input("Guess="))
     if guess > r:
         print("Lower")
-        Guesses_left = 1
+        guesses_left = guesses_left -1
     elif guess < r:
         print("Greater")
-        Guesses_left -= 1
+        guesses_left = guesses_left -1
     else:
         print("Correct")
         playing = False
+        elif guesses_left = 0
+        print("You Lose")
+
