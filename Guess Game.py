@@ -15,7 +15,7 @@ while guesses_left > 0 and playing:
         guesses_left = guesses_left -1
     else:
         print("Correct")
-        playing = False
-        elif guesses_left = 0
+        playing = Falsea
+    if guesses_left == 0:
         print("You Lose")
 
