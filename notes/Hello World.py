@@ -148,11 +148,29 @@ a = 3 # A is set to 3
 a == 3 # Is equal to 3?
 """
 
+colors = ["blue", "turquoise", "pink", "orange", "black", "red"]
+print(colors)
+print(colors[1])
+print(colors[0])
 
+# Length of the list
+print("There are %d things on the list." % len(colors))
 
+# Changing Elements in a list
+colors[1] = "Green"
+print(colors)
 
+# Looping through lists 
+for item in colors:
+    print(item) 
 
+NBA_Teams["Boston Celtics" "Golden State Warriors" "Houston Rockets" "Toronto Raptors" "Cleveland Cavaliers"]
+NBA_Teams[2] = "Utah Jazz"
+print(NBA_Teams)
+print("The last thing in the list is %s" %
 
+# Slicing a list
+print(new_list[1:3])
 
 
 
