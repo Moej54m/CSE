@@ -1,4 +1,4 @@
-""""""
+"""
 print("Hello World!")
 
 # This is a comment. This has no effect on the code
@@ -112,34 +112,30 @@ While loops - Use when you don't know how many iterations
 # Control Structures (If statements)
 sunny = False 
 if sunny:
-  print("Go Outside)
-  if percentage >= 90:
-   return "A"
-   else:
-   return "F"
-   
-   
-   
-   your_grade = grade_calc(82)
-   print(your_grade)
+  print("Go Outside")
+
 
 def grade_calc(percentage):
-elif percentage >= 90:
-return "A"
-elif percentage>= 80:
-return "B"
-elif percentage >= 70:
-return "C"
-elif percentage >= 60:
-return "D"
-else:
-  return "F"
-  
+    if percentage >= 90:
+        return "A"
+    elif percentage>= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return "D"
+    else:
+      return "F"
+
+
+your_grade = grade_calc(82)
+print(your_grade)
+
 # "RANDOM" Notes
 import random # thIS should be line 1
-peint(random.randint(0,100))
- # Equality Statements
- print(5 > 3)
+print(random.randint(0,100))
+# Equality Statements
+print(5 > 3)
 print (5 >= 3)
 print(3 == 3)
 print(3 != 4)
@@ -164,21 +160,49 @@ print(colors)
 for item in colors:
     print(item) 
 
-NBA_Teams["Boston Celtics" "Golden State Warriors" "Houston Rockets" "Toronto Raptors" "Cleveland Cavaliers"]
+NBA_Teams = ["Boston Celtics", "Golden State Warriors", "Houston Rockets", "Toronto Raptors", "Cleveland Cavaliers"]
 NBA_Teams[2] = "Utah Jazz"
 print(NBA_Teams)
-print("The last thing in the list is %s" %
+print("The last thing in the list is")
 
 # Slicing a list
-print(new_list[1:3])
+print(NBA_Teams[1:3])
 
+food_list = ["pizza", "tamales", "pie", "burrito", "flan", "salad", "turkey", "fried ice cream", "rice", "chicken",
+             "chow mein", "steak", "hamburger", "fries", "chicken wings", "salmon", "noodles", "toast", "fettuccini",
+             "lasagna"]
+food_list.append("rice")
+food_list.append("chicken")
+print(food_list)
+food_list.insert(1, "pie")
+print(food_list)
+food_list.remove("salad")
+print(food_list)
 
+# Tuples
+brands = ("apple", "samsung", "HTC")  # Notice the parentheses
 
+# Also removing stuff from a list
+print(food_list)
+food_list.pop(0)
+print(food_list)
 
+# Find the index of an item
+print(food_list.index(chicken))
 
+# Changing things into a list
+string1 = "turquoise"
+list1 = list(string1)
+print(list1)
 
+for i in range(len(list1)): # i goes through all indicies
+    if list1[i] =="u":  # if we find a U
+        list1.pop(i)  # remove the i-th index
+        list.insert(i, "*") # Put a * there instead
 
 
+# Turn a list into a string
+print("".join(list1))
 
 
 
@@ -287,5 +311,4 @@ print(new_list[1:3])
 
 
 
-hidden_age= real_age + 5
-print("This is your real age: %d" % hidden_age)
+
