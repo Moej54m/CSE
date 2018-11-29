@@ -13,7 +13,6 @@ while money >= 1 and money < 30:
         print(money)
         print()
         rounds += 1
-
     if dice1 + dice2 > 7 or dice1 + dice2 < 7:
         print("You did not get seven")
         money -= 1

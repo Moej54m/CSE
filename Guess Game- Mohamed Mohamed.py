@@ -5,6 +5,7 @@ guesses_left = 5
 playing = True
 print("Think of a number from 1 to 10")
 
+
 while guesses_left > 0 and playing:
     guess = int(input("Guess="))
 
