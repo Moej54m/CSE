@@ -195,6 +195,13 @@ string1 = "turquoise"
 list1 = list(string1)
 print(list1)
 
+# Function Notes
+# a**2 + b**2 = c**2
+def pythagorean(a, b):
+    return (a**2 + b**2)**(1/2)
+
+print(pythagorean(3, 4))
+
 for i in range(len(list1)): # i goes through all indicies
     if list1[i] =="u":  # if we find a U
         list1.pop(i)  # remove the i-th index

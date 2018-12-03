@@ -19,7 +19,7 @@ while money >= 1 and money < 30:
         print(money)
         print("You rolled a")
         print(dice1 and dice2)
-        print()
+        print("-+")
         rounds += 1
     if money > most:
             most = money
