@@ -8,7 +8,7 @@ while money >= 1 and money < 30:
     dice2 = random.randint(1, 6)
 
     if dice1 + dice2 == 7:
-        money += 5
+        money += 4
         print("You got 7")
         print(money)
         print()
@@ -29,4 +29,3 @@ print(rounds)
 print()
 print("Your greatest amount of money was")
 print(most)
-
