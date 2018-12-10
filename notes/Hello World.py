@@ -168,9 +168,7 @@ print("The last thing in the list is")
 # Slicing a list
 print(NBA_Teams[1:3])
 
-food_list = ["pizza", "tamales", "pie", "burrito", "flan", "salad", "turkey", "fried ice cream", "rice", "chicken",
-             "chow mein", "steak", "hamburger", "fries", "chicken wings", "salmon", "noodles", "toast", "fettuccini",
-             "lasagna"]
+food_list = ["pizza", "tamales", "pie", "burrito", "flan", "salad", "turkey", "fried ice cream", "rice", "chicken"             "lasagna"]
 food_list.append("rice")
 food_list.append("chicken")
 print(food_list)

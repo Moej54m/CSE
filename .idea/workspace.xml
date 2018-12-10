@@ -33,35 +33,36 @@
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.45" value="2" />
           <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.72" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="pstat" value="1" />
-          <entry key="py" value="7" />
+          <entry key="py" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="7" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="py" value="4931" />
+          <entry key="py" value="5469" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="4931" />
+          <entry key="Python" value="5469" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -76,10 +77,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/Hello World.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3434">
-              <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
+            <state relative-caret-position="17">
+              <caret line="170" column="114" selection-start-line="170" selection-start-column="114" selection-end-line="170" selection-end-column="114" />
               <folding>
-                <marker date="1543856551526" expanded="true" signature="3554:3614" ph="..." />
+                <marker date="1544463818211" expanded="true" signature="3434:3494" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notes/Challenges.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+              <folding>
+                <marker date="1544463818081" expanded="true" signature="172:222" ph="..." />
+                <marker date="1544463818081" expanded="true" signature="258:305" ph="..." />
+                <marker date="1544463818081" expanded="true" signature="338:343" ph="..." />
+                <marker date="1544463818081" expanded="true" signature="428:483" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/Fix It- Mohamed Mohamed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="17">
               <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
@@ -103,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lucky 7s- Mohamed Mohamed.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="87">
@@ -141,12 +157,13 @@
       <list>
         <option value="$PROJECT_DIR$/Guess Game.py" />
         <option value="$PROJECT_DIR$/Guess Game- Mohamed Mohamed.py" />
-        <option value="$PROJECT_DIR$/notes/Hello World.py" />
         <option value="$PROJECT_DIR$/notes/Fix It- Mohamed Mohamed.py" />
         <option value="$PROJECT_DIR$/Lucky 7s.py" />
         <option value="$PROJECT_DIR$/Challenges - Mohamed Mohamed.py" />
         <option value="$PROJECT_DIR$/notes/Mad Libs Part 2.py" />
         <option value="$PROJECT_DIR$/Lucky 7s- Mohamed Mohamed.py" />
+        <option value="$PROJECT_DIR$/notes/Hello World.py" />
+        <option value="$PROJECT_DIR$/notes/Challenges.py" />
       </list>
     </option>
   </component>
@@ -339,7 +356,7 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26110262" />
       <window_info id="Favorites" order="1" weight="0.33996937" />
-      <window_info id="Structure" order="2" visible="true" weight="0.25718608" />
+      <window_info active="true" id="Structure" order="2" visible="true" weight="0.26096824" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4961715" visible="true" weight="0.3262295" />
@@ -376,23 +393,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/Mad Libs Part 2.py" />
-    <entry file="file://$PROJECT_DIR$/notes/Hello World.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
-          <folding>
-            <marker date="1543856551526" expanded="true" signature="3554:3614" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Guess Game- Mohamed Mohamed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Challenges - Mohamed Mohamed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -403,17 +403,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes/Fix It- Mohamed Mohamed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lucky 7s- Mohamed Mohamed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="6" column="32" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guess Game- Mohamed Mohamed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Fix It- Mohamed Mohamed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Hello World.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="170" column="114" selection-start-line="170" selection-start-column="114" selection-end-line="170" selection-end-column="114" />
+          <folding>
+            <marker date="1544463818211" expanded="true" signature="3434:3494" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Challenges.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <marker date="1544463818081" expanded="true" signature="172:222" ph="..." />
+            <marker date="1544463818081" expanded="true" signature="258:305" ph="..." />
+            <marker date="1544463818081" expanded="true" signature="338:343" ph="..." />
+            <marker date="1544463818081" expanded="true" signature="428:483" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
