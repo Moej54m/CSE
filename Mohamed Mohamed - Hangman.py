@@ -13,7 +13,6 @@ word_list = list(word_selection)
 
 for i in range(length):
     output.append("* ")
-print(word_selection)
 print("".join(output))
 
 while guesses > 0 and len(word_list) > 0:
