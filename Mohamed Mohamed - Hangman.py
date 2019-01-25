@@ -11,28 +11,29 @@ list_of_letters = string.ascii_letters
 word_selection = random.choice(words)
 length = len(word_selection)
 word_list = list(word_selection)
+print(word_list)
 
 for i in range(length):
-    guess_word.append("*")
+    output.append("* ")
 print("".join(output))
 
 while guesses > 0 and len(word_list) > 0:
     user_guess = input("Guess a letter:")
     print('\n' * 10)
-    if user_guess in word_selection:
+    print(output)
+    if user_guess.lower() in word_list or user_guess.upper() in word_list:
         print("You are correct!")
         for i in range(len(word_selection)):
-            if user_guess in word_list:
-                word_list.pop(i)
-    for i in range(len(word_selection)):
-        if word_selection[i] == user_guess:
-            output.pop(i)
-            output.insert(i, user_guess)
+            if word_selection[i].lower() == user_guess.lower():
+                output.pop(i)
+                output.insert(i, user_guess)
         print("".join(output))
+
     else:
-        print("WRONG")
+        print("NOOPE")
         guesses = (guesses - 1)
         print(guesses)
-    if guesses == words:
         print("You are CORRRRRECT!")
+
+    if guesses == words:
         print("The word was %s" % word_selection)
