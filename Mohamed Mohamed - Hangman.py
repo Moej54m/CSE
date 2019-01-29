@@ -1,7 +1,7 @@
 import random
 import string
 words = ["LeBron James", "Kyrie Irving", "NBA.", "Doofenshmirtz.",
-            "Wakanda Forever.", "High School", "Hamburger", "Russell Westbrook", "Games"]
+            "Wakanda", "GBALL" "Pizza", "Hamburger", "Russell Westbrook", "Games"]
 output = []
 guesses = 8
 guess_word = []
@@ -44,5 +44,5 @@ while guesses > 0 and len(word_list) > 0:
         break
     if output == word_list:
         print("You won!!!")
-        print("THe word was %s" % word_selection)
+        print("The word was %s" % word_selection)
         break
