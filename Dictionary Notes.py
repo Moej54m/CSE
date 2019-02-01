@@ -105,3 +105,5 @@ for state, info in complex_dictionary.items():
         print("-" * 20)
     print("=" * 20)
 
+states ["AR"] = "Arkansas"  # Fixed it
+print[states['AR']]
