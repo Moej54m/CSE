@@ -17,12 +17,18 @@ world_map = {
     }
 }
 
-# Controller
-play = True
-current_node = world_map['R19A']
-    print(current_node['NAME'])
-    print(current_node[DESCRIPTION])
-while playing:
-    command = input(">_")
-    if command.lower() in ['q', 'quit', 'exit']:
-        playing = False
+
+world map = {
+    'Nuketown Hospital': {
+        'NAME': "Lobby Room",
+        'DESCRIPTION': " This is the name of the hospital you are in"
+
+
+
+
+
+
+
+
+
+
