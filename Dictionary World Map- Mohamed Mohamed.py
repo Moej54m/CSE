@@ -43,10 +43,13 @@ world_map = {
             'SOUTH': 'CAFETERIA'
     },
     'CAFETERIA': {
-        'NAME': 'The Cafeteria'
+        'NAME': 'The Cafeteria',
         'DESCRIPTION': "You see a lot of tables. There are also many empty restaurants. As you look closer, each restaurant has a big closet.",
-        'PATHS':
+        'PATHS': {
+            'SOUTH': 'WAITING_ROOM'
+        }
     },
+    ''
 
 
 
