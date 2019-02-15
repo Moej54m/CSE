@@ -1,7 +1,7 @@
 playing = true
 
 playing = True
-current_node = world_map['LOBBY'
+current_node = world_map['LOBBY']
 directions = ['NORTH', 'SOUTH', 'EAST', 'WEST', 'UP', 'DOWN']
 
 while playing:
