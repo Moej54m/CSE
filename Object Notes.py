@@ -25,6 +25,7 @@ class Phone(object):
         if self.battery_left <= 0:
             print("You can't. The phone is dead.")
             return
+
         self.battery_left -= duration * battery_loss_per_minute
         if self.battery_left < 0:
             self.battery_left = 0
