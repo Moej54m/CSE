@@ -1,16 +1,13 @@
 class Room(object):
-    def __init__(self, name, north=None, south=None, east):
+    def __init__(self, name, north=None, south=None, east, west, up, down):
         self.name = name
         self.north = north
         self.south =south
         self.east = east
-
-    # Option 1 - Define as we go
-R19A = Room("Mr. Wiebe's Room")
-parking_lot = Room("Parking Lot, None, R19A")
-
-R19A.north - parking_lot
-    # Option 2 - Set all at once, modify controller
-R19A = Room("Mr. Wiebe's Room," 'parking lot')
-parking_lot = Room("Parking Lot", None, "R19A")
-
+        self.west = west
+        self.up = up
+        self.down = down
+LOBBY = ('Lobby', '1st_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None)
+1ST_HALLWAY = ('The First Hallway', None, 'LOBBY', None, None, None, None)
+WAITING_ROOM = ('The Waiting Room', 'CAFETERIA', None, None, 'LOBBY', None, None)
+KITCHEN =
