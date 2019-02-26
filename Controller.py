@@ -1,4 +1,4 @@
-playing = true
+playing = True
 
 playing = True
 current_node = world_map['LOBBY']
