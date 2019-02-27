@@ -5,6 +5,7 @@ class Room(object):
         self.east = east
         self. south = south
         self.description = description
+        self.characters = []
 
 
 class Player(object):
@@ -37,7 +38,7 @@ playing = True
 
 while playing:
     print(player.current_location.name)
-    print(current_location.description)
+    print(player.current_location.description)
     command = input(">_")
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
@@ -45,7 +46,7 @@ while playing:
         try:
             next_room = player.find_next_room(command)
             player.move(next_room)
-        except keyError:
+        except KeyError:
             print("I can't go that way")
         else:
             print("Command Not Found")
