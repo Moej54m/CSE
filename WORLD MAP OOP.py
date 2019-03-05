@@ -31,23 +31,36 @@ class Player(object):
         return globals()[name_of_room]
 
 
-LOBBY = ('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital. You"
-                                                                             " are inside the lobby of the hospital."
-                                                                             " There is one the door of each of the"
-                                                                             " east, west, and north wall.")
-FIRST_HALLWAY = ('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the first"
-                                                                             " floor. There are doors that are boarded"
-                                                                             " up in the east, and west and cannot be"
-                                                                             " pried open.The only thing you see is a"
-                                                                             " beautiful, red, hallway runner placed"
-                                                                             " on the floor. There is a door south that"
-                                                                             " appears to lead back to the lobby.")
-WAITING_ROOM = ('The Waiting Room', 'CAFETERIA', None, None, 'LOBBY', None, None, "This is the Waiting Room. You don't"
-                                                                                  " see nothing except chairs and a"
-                                                                                  " table. There are doors to the"
-                                                                                  " north and west.")
-
+LOBBY = Room('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital. "
+                                                                                   "You are inside the lobby "
+                                                                                   "of the hospital."
+                                                                                   "There is one the door of each of"
+                                                                                   " the east, west, and north wall.")
+FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the "
+                                                                                 "first"
+                                                                                 " floor. There are doors that are"
+                                                                                 " boarded up in the east, and west"
+                                                                                 " and cannot be pried open. "
+                                                                                 "The only thing you see is a"
+                                                                                 " beautiful, red, hallway runner"
+                                                                                 " placed on the floor. There is a"
+                                                                                 " door south that appears to lead"
+                                                                                 " back to the lobby.")
+WAITING_ROOM = Room('The Waiting Room', 'CAFETERIA', None, None, 'LOBBY', None, None, "This is the Waiting Room. "
+                                                                                      "You don't"
+                                                                                      " see nothing except chairs and a"
+                                                                                      " table. There are doors to the"
+                                                                                      " north and west.")
+KITCHEN = Room('The Kitchen', None, 'CAFETERIA', None, None, None, None,  "You see a lot of drawers and cabinets. "
+                                                                          "There are also utensils on some tables. "
+                                                                          "You see an oven and sadly a microwave."
+                                                                          " There is a door to the south.")
+CAFETERIA = Room('The Cafeteria', None, 'WAITING_ROOM', None, None, None, None, "You see a lot of tables. There are"
+                                                                                " also many empty mini restaurants. "
+                                                                                "There is a door south.")
+STAIRS = ('Main Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', None)
 player = Player(LOBBY)
+
 
 playing = True
 directions = ['north', 'east', 'south', 'west', 'up', 'down']

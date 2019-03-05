@@ -30,16 +30,15 @@ world_map = {
     },
     'KITCHEN': {
         'NAME': 'The Kitchen',
-        'DESCRIPTION': "You see a lot of drawer and cabinets. There are also utensils on some tables. You see an "
-                       "oven and also a pantry. There is a door to the west.",
+        'DESCRIPTION': "You see a lot of drawers and cabinets. There are also utensils on some tables. You see an "
+                       "oven and also a pantry. There is a door to the south.",
         'PATHS': {
             'SOUTH': 'CAFETERIA'
         }
     },
     'CAFETERIA': {
         'NAME': 'The Cafeteria',
-        'DESCRIPTION': "You see a lot of tables. There are also many empty restaurants. As you look closer,"
-                       " each restaurant has a big closet.",
+        'DESCRIPTION': "You see a lot of tables. There are also many empty mini restaurants. There is a door south.",
         'PATHS': {
             'SOUTH': 'WAITING_ROOM'
         }
@@ -48,7 +47,8 @@ world_map = {
         'NAME': "Main Floor Stairs",
         'DESCRIPTION': "These are the stairs for the first floor. The appear to lead up to the second floor.",
         'PATHS': {
-            'EAST': 'LOBBY'
+            'EAST': 'LOBBY',
+            'UP': 'Emergency_Hallway'
         }
     },
     'Emergency_Hallway': {
