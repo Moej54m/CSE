@@ -116,10 +116,11 @@ world_map = {
                        "normal one with nice grass. "
                        "There is a door to inside east.",
         'PATHS': {
-            'EAST': 'Laundry_Room'
+            'EAST': 'Laundry Room'
         }
     },
-    'Doctor_Room': {
+    'DOCTOR_ROOM'
+    'NAME': "The Doctor Room",
         'DESCRIPTION': "There are a lot of computers and telephones there. It appears a doctor used to stay here. "
                        "There is a door west.",
         'PATHS': {
