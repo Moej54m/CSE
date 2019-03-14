@@ -17,21 +17,44 @@ def use_weapon(self):
 
 class Sword(Weapon):
     def __init__(self):
-        super(Sword, self).__init__("Sword", 15, 80)
+        super(Sword, self).__init__("Sword", 20, 80)
 
 
 class Knife(Weapon):
     def __init__(self):
-        super(Knife, self).__init__("Knife", 7, 50)
+        super(Knife, self).__init__("Knife", 15, 50)
 
 
-class Assault_Rifle(Weapon):
+class AssaultRifle(Weapon):
     def __init__(self):
-        super(Assault_Rifle, self).__init__("Assault_Rifle", 20, 100)
+        super(AssaultRifle, self).__init__("Assault Rifle", 30, 100)
 
     def shoot(self):
-        self.durabilty -= 3
-        print("You fire your assault rifle.")
+        self.durability -= 3
+        print("You fire your assault rifle. Be careful, the durability is going down ever shot.")
+
+
+class Armor(Item):
+    def __init__(self, name, defense):
+        super(Armor, self). __init__(name)
+        self.defense = defense
+
+
+class ChestPiece(Armor):
+    def __init__(self):
+        super(ChestPiece, self). __init__("Chest Armor", 25)
+
+
+class Gauntlets(Armor):
+    def __init__(self):
+        super(Gauntlets, self). __init__("Gauntlets, 10")
+
+
+
+
+
+
+
 
 
 
