@@ -42,12 +42,20 @@ class Armor(Item):
 
 class ChestPiece(Armor):
     def __init__(self):
-        super(ChestPiece, self). __init__("Chest Armor", 25)
+        super(ChestPiece, self). __init__("Chest Armor", 40)
 
 
 class Gauntlets(Armor):
     def __init__(self):
-        super(Gauntlets, self). __init__("Gauntlets, 10")
+        super(Gauntlets, self). __init__("Gauntlets", 20)
+
+
+class Greaves(Armor):
+    def __init__(self):
+        super(Greaves, self). __init__("Greaves", 10)
+class Helemet(Armor):
+    def __init__(self):
+        super(Greaves, self). __init__("Helmet", 20)
 
 
 
