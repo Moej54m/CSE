@@ -106,8 +106,8 @@ DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, No
 
 player = Player(LOBBY)
 
-playing = True
-directions = ['north', 'south', 'east', 'west', 'up', 'down']
+playing =
+directions = ['north', 'south', 'east', 'west', 'up', 'down']True
 
 while playing:
     print(player.current_location.name)

@@ -34,7 +34,7 @@ class AssaultRifle(Weapon):
         print("You fire your assault rifle. Be careful, the durability is going down ever shot.")
 
 
-class Armor(Item):
+class Armor(Item):  # ARMOR DEFINITION
     def __init__(self, name, defense):
         super(Armor, self). __init__(name)
         self.defense = defense
@@ -53,9 +53,31 @@ class Gauntlets(Armor):
 class Greaves(Armor):
     def __init__(self):
         super(Greaves, self). __init__("Greaves", 10)
-class Helemet(Armor):
+
+
+class Helmet(Armor):
     def __init__(self):
-        super(Greaves, self). __init__("Helmet", 20)
+        super(Helmet, self). __init__("Helmet", 20)
+
+
+class Shield(Item):                         # SHIELD DEFINITION
+    def __init__(self, name, health, durability):
+        super(Shield, self).__init__(name)
+        self.health = health
+        self.shield = shield
+        self.amount = amount
+
+
+class HUGESHIELD(Shield):
+    def __init__(self):
+        super(HUGESHIELD, self). __init__("Huge Shield",
+
+
+def drink_potion(self):
+    self.amount -=1
+    self.shield +=40
+
+
 
 
 
