@@ -20,6 +20,21 @@ class Sword(Weapon):
         super(Sword, self).__init__("Sword", 20, 80)
 
 
+class SMG(Weapon):
+    def __init__(self):
+        super(SMG, self). __init__("SubMachine Gun", 15, 100)
+
+
+class Rock(Weapon):
+    def __init__(self):
+        super(Rock, self). __init__("Rock", 5, 20)
+
+
+class Spoon(Weapon):
+    def __init__(self):
+        super(Spoon, self). __init__("Spoon", 3, 10)
+
+
 class Knife(Weapon):
     def __init__(self):
         super(Knife, self).__init__("Knife", 15, 50)
@@ -31,7 +46,7 @@ class AssaultRifle(Weapon):
 
     def shoot(self):
         self.durability -= 3
-        print("You fire your assault rifle. Be careful, the durability is going down ever shot.")
+        print("You fire your assault rifle. Be careful, the durability is going down every shot only for this rifle.")
 
 
 class Armor(Item):  # ARMOR DEFINITION
@@ -63,19 +78,30 @@ class Helmet(Armor):
 class Shield(Item):                         # SHIELD DEFINITION
     def __init__(self, name, health, durability):
         super(Shield, self).__init__(name)
+        self.durability = durability
         self.health = health
-        self.shield = shield
-        self.amount = amount
 
 
 class HUGESHIELD(Shield):
     def __init__(self):
-        super(HUGESHIELD, self). __init__("Huge Shield",
+        super(HUGESHIELD, self). __init__("Huge Shield", 50, 99999999999999999999)
+
+    def drink_shield(self):
+        self.durability -= 1
+        self.shield += 50
 
 
-def drink_potion(self):
-    self.amount -=1
-    self.shield +=40
+class SMALLSHIELD(Shield):
+    def __init__(self):
+        super(SMALLSHIELD, self). __init__("Huge Shield", 25, 999999999999999999999)
+
+    def drink_shield(self):
+        self.durability -= 1
+        self.shield += 25
+
+
+
+
 
 
 
