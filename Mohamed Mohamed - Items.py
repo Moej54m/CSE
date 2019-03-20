@@ -20,6 +20,11 @@ class Sword(Weapon):
         super(Sword, self).__init__("Sword", 20, 80)
 
 
+class Sniper(Weapon):
+    def __init__(self):
+        super(Sniper, self). __init__("Sword", 50, 100)
+
+
 class SMG(Weapon):
     def __init__(self):
         super(SMG, self). __init__("SubMachine Gun", 15, 100)
@@ -70,6 +75,11 @@ class Greaves(Armor):
         super(Greaves, self). __init__("Greaves", 10)
 
 
+class ShoulderPlates(Armor):
+    def __init__(self):
+        super(ShoulderPlates, self).__init__("Shoulder Plates", 10)
+
+
 class Helmet(Armor):
     def __init__(self):
         super(Helmet, self). __init__("Helmet", 20)
@@ -98,20 +108,3 @@ class SMALLSHIELD(Shield):
     def drink_shield(self):
         self.durability -= 1
         self.shield += 25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
