@@ -15,6 +15,11 @@ def use_weapon(self):
         print("You use the weapon and its durability drops down by 10.")
 
 
+class BoneSaw(Weapon):
+    def __init__(self):
+        super(BoneSaw, self). __init__("Sword", 20, 60)
+
+
 class Sword(Weapon):
     def __init__(self):
         super(Sword, self).__init__("Sword", 20, 80)
@@ -108,3 +113,27 @@ class SMALLSHIELD(Shield):
     def drink_shield(self):
         self.durability -= 1
         self.shield += 25
+
+
+class Character(object):
+    def __init__(self, name: str, health: int, weapon, armor):
+        self.Armor = Armor
+        self.name = name
+        self.health = health
+        self.armor = armor
+        self.weapon = weapon
+
+    def receive_damage(self, damage: int):
+        if self.Armor > damage:
+            print(" No damage is done because of the armor.")
+        elif self.shield <= 0:
+            print("%s enemy died" % self.name)
+            return
+        else:
+            self.shield -= damage - self.Armor
+            print("%s has %d shield remaining." % (self.name, self.shield))
+
+    def attack(self, enemy):
+        print("%s attacks %s for %d damage." % (self.name, enemy.name, self.weapon))
+        enemy.receive_damage(self.damage)
+
