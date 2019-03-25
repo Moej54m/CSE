@@ -117,23 +117,20 @@ class SMALLSHIELD(Shield):
 
 class Character(object):
     def __init__(self, name: str, health: int, weapon, armor):
-        self.Armor = Armor
         self.name = name
         self.health = health
-        self.armor = armor
         self.weapon = weapon
+        self.armor = armor
 
-    def receive_damage(self, damage: int):
-        if self.Armor > damage:
-            print(" No damage is done because of the armor.")
-        elif self.shield <= 0:
-            print("%s enemy died" % self.name)
-            return
+    def take_damage(self, damage: int):
+        if self.armor.armor_amt > damage:
+            print("No damage is done because of some extravagant armor.")
         else:
-            self.shield -= damage - self.Armor
-            print("%s has %d shield remaining." % (self.name, self.shield))
+            self.health -= damage - self.armor.armor_amt
+        print("%s has %d health left" % (self.name, self.health))
 
-    def attack(self, enemy):
-        print("%s attacks %s for %d damage." % (self.name, enemy.name, self.weapon))
-        enemy.receive_damage(self.damage)
+    def attack(self, target):
+        print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon.damage))
+        target.take_damage(self.weapon.damage)
+
 
