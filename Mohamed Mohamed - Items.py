@@ -4,7 +4,7 @@ class Item(object):
 
 
 class Weapon(Item):
-    def __init__(self, name, damage, durability):
+    def __init__(self, name: object, damage: object, durability: object) -> object:
         super(Weapon, self). __init__(name)
         self.damage = damage
         self.durability = durability
@@ -17,7 +17,7 @@ def use_weapon(self):
 
 class BoneSaw(Weapon):
     def __init__(self):
-        super(BoneSaw, self). __init__("Sword", 20, 60)
+        super(BoneSaw, self). __init__("Bone Saw", 20, 60)
 
 
 class Sword(Weapon):
@@ -27,7 +27,7 @@ class Sword(Weapon):
 
 class Sniper(Weapon):
     def __init__(self):
-        super(Sniper, self). __init__("Sword", 50, 100)
+        super(Sniper, self). __init__("Sniper", 50, 100)
 
 
 class SMG(Weapon):
@@ -134,3 +134,16 @@ class Character(object):
         target.take_damage(self.weapon.damage)
 
 
+# Items
+Sword = Weapon("Sword", 30, 100)
+SMG = Weapon("SubMachineGun", 15, 100)
+ChestPiece = Armor("Chest Armor", 40)
+
+# Characters
+Zombie = Character("Zombie", 100, Sword, Armor("Generic Armor", 2))
+Ghost = Character("Ghost", 10000, SMG, ChestPiece)
+
+Zombie.attack(Ghost)
+Ghost.attack(Zombie)
+Ghost.attack(Zombie)
+Ghost.attack(Zombie)
