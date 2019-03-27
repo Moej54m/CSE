@@ -103,7 +103,7 @@ class HUGESHIELD(Shield):
 
     def drink_shield(self):
         self.durability -= 1
-        self.shield += 50
+        self.Shield += 50
 
 
 class SMALLSHIELD(Shield):
@@ -123,10 +123,10 @@ class Character(object):
         self.armor = armor
 
     def take_damage(self, damage: int):
-        if self.armor.armor_amt > damage:
+        if self.armor.defense > damage:
             print("No damage is done because of some extravagant armor.")
         else:
-            self.health -= damage - self.armor.armor_amt
+            self.health -= damage - self.armor.defense
         print("%s has %d health left" % (self.name, self.health))
 
     def attack(self, target):
