@@ -163,20 +163,22 @@ Ghost.attack(Zombie)
 Ghost.attack(Zombie)
 
 assault_rifle = AssaultRifle()
-bone_saw = BoneSaw
-sword = Sword
-sniper = Sniper
-smg = SMG
-rock = Rock
-spoon = Spoon
-knife = Knife
-chest_piece = ChestPiece
-gauntlets = Gauntlets
-greaves = Greaves
-shoulder_plates = ShoulderPlates
-helmet = Helmet
-hugeshield = HUGESHIELD
-smallshield = SMALLSHIELD
+bone_saw = BoneSaw()
+sword = Sword()
+sniper = Sniper()
+smg = SMG()
+rock = Rock()
+spoon = Spoon()
+knife = Knife()
+chest_piece = ChestPiece()
+gauntlets = Gauntlets()
+greaves = Greaves()
+shoulder_plates = ShoulderPlates()
+helmet = Helmet()
+hugeshield = HUGESHIELD()
+smallshield = SMALLSHIELD()
+
+
 class Player(object):
     def __init__(self, starting_location):
         self.current_location = starting_location
@@ -199,11 +201,12 @@ class Player(object):
         return globals()[name_of_room]
 
 
-LOBBY = Room('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital. "
+LOBBY = Room('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital."
                                                                                    "You are inside the lobby "
                                                                                    "of the hospital."
                                                                                    "There is one the door of each of"
-                                                                                   " the east, west, and north wall.")
+                                                                                   " the east, west, "
+                                                                                   "and north wall.", knife())
 FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the "
                                                                                  "first"
                                                                                  " floor. There are doors that are"
@@ -213,19 +216,20 @@ FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None,
                                                                                  " beautiful, red, hallway runner"
                                                                                  " placed on the floor. There is a"
                                                                                  " door south that appears to lead"
-                                                                                 " back to the lobby.")
+                                                                                 " back to the lobby.", BoneSaw())
 WAITING_ROOM = Room('The Waiting Room', 'CAFETERIA', None, None, 'LOBBY', None, None, "This is the Waiting Room. "
                                                                                       "You don't"
                                                                                       " see nothing except chairs and a"
                                                                                       " table. There are doors to the"
-                                                                                      " north and west.")
+                                                                                      " north and west.", ChestPiece())
 KITCHEN = Room('The Kitchen', None, 'CAFETERIA', None, None, None, None,  "You see a lot of drawers and cabinets. "
                                                                           "There are also utensils on some tables. "
                                                                           "You see an oven and sadly a microwave."
-                                                                          " There is a door to the south.")
+                                                                          " There is a door to the south.", Spoon())
 CAFETERIA = Room('The Cafeteria', None, 'WAITING_ROOM', None, None, None, None, "You see a lot of tables. There are"
                                                                                 " also many empty mini restaurants. "
-                                                                                "There is a door south.")
+                                                                                "There is a "
+                                                                                "door south.", rock(),shoulder_plates())
 STAIRS = Room('Main Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', None, None, "These are the stairs"
                                                                                                "for the first floor. "
                                                                                                "They appear to lead "
@@ -237,18 +241,26 @@ EMERGENCY_HALLWAY = Room('The Emergency Hallway', None, None, 'Waiting_Room_2', 
                                                                                                   "that occurred. "
                                                                                                   "There are doors to"
                                                                                                   " the south "
-                                                                                                  "and the east.")
+                                                                                                  "and the east"
+                                                                                                  ".", Gauntlets())
 Waiting_Room_2 = Room('2nd Floor Waiting Room', None, 'Laundry_Room', 'Security_Room', 'Delivery_Room', None, None,
                       "This room looks like an even"
                       "better waiting rooms with "
                       "cushioned chairs and tvs."
                       "There are doors to the east "
-                      "and west.")
-Security_Room = Room('The Security Room', None, None, 'Waiting_Room_2', 'Bathroom', None, None, "There are many "
-                                                                                                "stalls and rugs on the"
-                                                                                                "ground. There are "
-                                                                                                "doors to the north "
-                                                                                                "and the east.")
+                      "and west.", Greaves(), Sniper())
+Security_Room = Room('The Security Room', None, None, 'Waiting_Room_2', 'Bathroom', None, None, "This room has many "
+                                                                                                "computers and some "
+                                                                                                "drawers. There "
+                                                                                                "are also a few closets."
+                                                                                                "There is a door west.")
+
+BATHROOM = Room('The Bathroom, 'BALCONY', None,'Delivery_Room', None, None, None, "There are many"
+                                                                                  "stalls and rugs on the"
+                                                                                  "ground. There are "
+                                                                                  "doors to the north "
+                                                                                  "and "
+                                                                                  "the east.", Sword())
 BALCONY = Room('The Balcony', None, 'BATHROOM', None, None, None, None, "It is finally good to get some air. "
                                                                         "Unfortunately there is nothing there.")
 Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'Doctor Room', 'BACKYARD', None, None, "You see dryers "
@@ -259,7 +271,8 @@ Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'Doctor Room', '
                                                                                                        "baskets "
                                                                                                        "everywhere. "
                                                                                                        "There is a door"
-                                                                                                       " back north.")
+                                                                                                       " back "
+                                                                                                       "north.", SMG())
 BACKYARD = Room('The Backyard', None, None, 'Laundry_Room', None, None, None, "There is nothing really "
                                                                               "special about the backyard. "
                                                                               "it looks like a "
@@ -269,7 +282,8 @@ DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, No
                                                                                     "and telephones there. "
                                                                                     "It appears a doctor used to "
                                                                                     "stay here. "
-                                                                                    "There is a door west.")
+                                                                                    "There is a "
+                                                                                    "door west.", hugeshield())
 
 player = Player(LOBBY)
 
