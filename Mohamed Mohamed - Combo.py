@@ -1,6 +1,7 @@
 
 class Room(object):
-    def __init__(self, name, north=None, south=None, east=None, west=None, up=None, down=None, description=(), item=None):
+    def __init__(self, name, north=None, south=None, east=None, west=None, up=None, down=None, description=(),
+                                                                                                item=None):
         self.name = name
         self.north = north
         self.south = south
@@ -18,7 +19,7 @@ class Item(object):
 
 
 class Weapon(Item):
-    def __init__(self, name: object, damage: object, durability: object) -> object:
+    def __init__(self, name, damage, durability):
         super(Weapon, self). __init__(name)
         self.damage = damage
         self.durability = durability
@@ -122,11 +123,11 @@ class HUGESHIELD(Shield):
 
 class SMALLSHIELD(Shield):
     def __init__(self):
-        super(SMALLSHIELD, self). __init__("Huge Shield", 25, 999999999999999999999)
+        super(SMALLSHIELD, self). __init__("Small Shield", 25, 999999999999999999999)
 
     def drink_shield(self):
         self.durability -= 1
-        self.shield += 25
+        self.Shield += 25
 
 
 class Character(object):
@@ -136,31 +137,6 @@ class Character(object):
         self.weapon = weapon
         self.armor = armor
 
-    def take_damage(self, damage: int):
-        if self.armor.defense > damage:
-            print("No damage is done because of some extravagant armor.")
-        else:
-            self.health -= damage - self.armor.defense
-        print("%s has %d health left" % (self.name, self.health))
-
-    def attack(self, target):
-        print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon.damage))
-        target.take_damage(self.weapon.damage)
-
-
-# Items
-Sword = Weapon("Sword", 30, 100)
-SMG = Weapon("SubMachineGun", 15, 100)
-ChestPiece = Armor("Chest Armor", 40)
-
-# Characters
-Zombie = Character("Zombie", 100, Sword, Armor("Generic Armor", 2))
-Ghost = Character("Ghost", 10000, SMG, ChestPiece)
-
-Zombie.attack(Ghost)
-Ghost.attack(Zombie)
-Ghost.attack(Zombie)
-Ghost.attack(Zombie)
 
 assault_rifle = AssaultRifle()
 bone_saw = BoneSaw()
@@ -202,11 +178,11 @@ class Player(object):
 
 
 LOBBY = Room('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital."
-                                                                                   "You are inside the lobby "
+                                                                                   " You are inside the lobby "
                                                                                    "of the hospital."
-                                                                                   "There is one the door of each of"
+                                                                                   " There is one the door of each of"
                                                                                    " the east, west, "
-                                                                                   "and north wall.", knife())
+                                                                                   "and north wall.", Knife())
 FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the "
                                                                                  "first"
                                                                                  " floor. There are doors that are"
@@ -225,12 +201,13 @@ WAITING_ROOM = Room('The Waiting Room', 'CAFETERIA', None, None, 'LOBBY', None, 
 KITCHEN = Room('The Kitchen', None, 'CAFETERIA', None, None, None, None,  "You see a lot of drawers and cabinets. "
                                                                           "There are also utensils on some tables. "
                                                                           "You see an oven and sadly a microwave."
-                                                                          " There is a door to the south.", Spoon(),
-                                                                                                            helmet())
+                                                                          " There is a door to the south.", [Spoon(),
+                                                                                                             Helmet()])
 CAFETERIA = Room('The Cafeteria', None, 'WAITING_ROOM', None, None, None, None, "You see a lot of tables. There are"
                                                                                 " also many empty mini restaurants. "
                                                                                 "There is a "
-                                                                                "door south.", rock(),shoulder_plates())
+                                                                                "door south.", [Rock(),
+                                                                                                ShoulderPlates()])
 STAIRS = Room('Main Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', None, None, "These are the stairs"
                                                                                                "for the first floor. "
                                                                                                "They appear to lead "
@@ -243,18 +220,19 @@ EMERGENCY_HALLWAY = Room('The Emergency Hallway', None, None, 'Waiting_Room_2', 
                                                                                                   "There are doors to"
                                                                                                   " the south "
                                                                                                   "and the east"
-                                                                                                  ".", Gauntlets(),
-                                                                                                    smallshield())
+                                                                                                  ".", [Gauntlets(),
+                                                                                                        smallshield])
 Waiting_Room_2 = Room('2nd Floor Waiting Room', None, 'Laundry_Room', 'Security_Room', 'Delivery_Room', None, None,
                       "This room looks like an even"
                       "better waiting rooms with "
                       "cushioned chairs and tvs."
                       "There are doors to the east "
-                      "and west.", Greaves(), Sniper())
+                      "and west.", [Greaves(), Sniper()])
 Security_Room = Room('The Security Room', None, None, 'Waiting_Room_2', 'Bathroom', None, None, "This room has many "
                                                                                                 "computers and some "
                                                                                                 "drawers. There "
-                                                                                                "are also a few closets."
+                                                                                                "are also a "
+                                                                                                "few closets."
                                                                                                 "There is a door west.")
 
 Delivery_Room = Room('The Delivery Room', None, None, 'Waiting_Room_2', 'BATHROOM', None, None, "This room has a desk"
@@ -262,12 +240,12 @@ Delivery_Room = Room('The Delivery Room', None, None, 'Waiting_Room_2', 'BATHROO
                                                                                                 "sign on it. There is "
                                                                                                 "a door to the west.",)
 
-BATHROOM = Room('The Bathroom, 'BALCONY', None,'Delivery_Room', None, None, None, "There are many"
-                                                                                  "stalls and rugs on the"
-                                                                                  "ground. There are "
-                                                                                  "doors to the north "
-                                                                                  "and "
-                                                                                  "the east.", Sword())
+BATHROOM = Room('The Bathroom', 'BALCONY', None,'Delivery_Room', None, None, None, "There are many"
+                                                                                   "stalls and rugs on the"
+                                                                                   "ground. There are "
+                                                                                   "doors to the north "
+                                                                                   "and "
+                                                                                   "the east.", Sword())
 BALCONY = Room('The Balcony', None, 'BATHROOM', None, None, None, None, "It is finally good to get some air. "
                                                                         "Unfortunately there is nothing there.")
 Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'Doctor Room', 'BACKYARD', None, None, "You see dryers "
@@ -290,19 +268,22 @@ DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, No
                                                                                     "It appears a doctor used to "
                                                                                     "stay here. "
                                                                                     "There is a "
-                                                                                    "door west.", hugeshield(),
-                                                                                                    assault_rifle())
+                                                                                    "door west.", [hugeshield,
+                                                                                                   AssaultRifle()])
+
 
 player = Player(LOBBY)
 
 
-
 playing = True
+inventory = ['inventory', 'i']
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
+prick_up = ['pick up', 'grab']
 
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
+    print("You have %s shield." % player.Shield)
     command = input(">_")
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
