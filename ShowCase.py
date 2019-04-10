@@ -1,4 +1,5 @@
-
+class Player(object):
+    def __init__(self, starting_location, shield):
 
 class Room(object):
     def __init__(self, name, north=None, south=None, east=None, west=None, up=None, down=None, description=(),
@@ -106,7 +107,7 @@ class Helmet(Armor):
         super(Helmet, self). __init__("Helmet", 20)
 
 
-class Shield(Item):                         # SHIELD DEFINITION
+class Shield():                         # SHIELD DEFINITION
     def __init__(self, name, health, durability):
         super(Shield, self).__init__(name)
         self.durability = durability
@@ -281,15 +282,20 @@ inventory = ['inventory', 'i']
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
 prick_up = ['pick up', 'grab']
 
-command = input(">_")
+elif command.upper() in directions:
+        try:
+            room_name = current_node['PATHS'][command.upper()]
+            current_node = world_map[room_name]
+        except KeyError:
+            print("I can't go that way.")
+        except AttributeError:
+            pass
 
-if command.lower() in short_directions:
-    pos = short_directions.index(command.lower())
-    command = directions[pos]
 
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
+    print(player.shield)
     command = input(">_")
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
