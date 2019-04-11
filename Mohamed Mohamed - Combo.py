@@ -1,3 +1,25 @@
+class Player(object):
+    def __init__(self, starting_location, weapon=None):
+        self.current_location = starting_location
+        self.inventory = []
+        self.health = 100
+        self.name =  "You"
+        self.weapon = weapon
+
+    def move(self, new_location):
+        """This moves the player to a new room
+        :param new_location: The room object of which you are going to
+        """
+        self.current_location = new_location
+
+    def find_next_room(self, direction):
+        """This method searches the current room so see if a room
+        exists in that direction.
+        :param direction: The direction that you want to move to
+        :return: The Room object if it exists, or None if it does not
+        """
+        name_of_room = getattr(self.current_location, direction)
+        return globals()[name_of_room]
 
 
 class Room(object):
@@ -301,4 +323,10 @@ while playing:
             print("I can't go that way")
     else:
         print("Command Not Found")
+
+    if "pickup" in command.lower() or 'grab' in command.lower():
+        player.inventory.append(self.current_location.item)
+        print("Your player picked up the %s" % player.current_location.item)
+        player.self.current_location.item = None
+
 
