@@ -3,7 +3,7 @@ class Player(object):
         self.current_location = starting_location
         self.inventory = []
         self.health = 100
-        self.name =  "You"
+        self.name = "You"
         self.weapon = weapon
 
     def move(self, new_location):
@@ -24,7 +24,7 @@ class Player(object):
 
 class Room(object):
     def __init__(self, name, north=None, south=None, east=None, west=None, up=None, down=None, description=(),
-                                                                                                item=None):
+                                                                                               item = None):
         self.name = name
         self.north = north
         self.south = south
@@ -128,29 +128,29 @@ class Helmet(Armor):
         super(Helmet, self). __init__("Helmet", 20)
 
 
-class Shield(Item):                         # SHIELD DEFINITION
+class Health(Item):                         # SHIELD DEFINITION
     def __init__(self, name, health, durability):
-        super(Shield, self).__init__(name)
+        super(Health, self).__init__(name)
         self.durability = durability
         self.health = health
 
 
-class HUGESHIELD(Shield):
+class Bandage(Health):
     def __init__(self):
-        super(HUGESHIELD, self). __init__("Huge Shield", 50, 99999999999999999999)
+        super(Bandage, self). __init__("Bandage", 50, 99999999999999999999)
 
-    def drink_shield(self):
+    def heal_health(self):
         self.durability -= 1
-        self.Shield += 50
+        self.Health += 50
 
 
-class SMALLSHIELD(Shield):
+class MedKit(Health):
     def __init__(self):
-        super(SMALLSHIELD, self). __init__("Small Shield", 25, 999999999999999999999)
+        super(MedKit, self). __init__("Medical Kit", 100, 999999999999999999999)
 
-    def drink_shield(self):
+    def heal_medkit(self):
         self.durability -= 1
-        self.Shield += 25
+        self.MedKit += 25
 
 
 class Character(object):
@@ -174,8 +174,8 @@ gauntlets = Gauntlets()
 greaves = Greaves()
 shoulder_plates = ShoulderPlates()
 helmet = Helmet()
-hugeshield = HUGESHIELD()
-smallshield = SMALLSHIELD()
+medkit = MedKit()
+bandage = Bandage()
 
 
 class Player(object):
@@ -200,7 +200,7 @@ class Player(object):
         return globals()[name_of_room]
 
 
-LOBBY = Room('Lobby', 'FIRST_Hallway', None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital."
+LOBBY = Room('Lobby', None, None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital."
                                                                                    " You are inside the lobby "
                                                                                    "of the hospital."
                                                                                    " There is one the door of each of"
@@ -244,7 +244,7 @@ EMERGENCY_HALLWAY = Room('The Emergency Hallway', None, None, 'Waiting_Room_2', 
                                                                                                   " the south "
                                                                                                   "and the east"
                                                                                                   ".", [Gauntlets(),
-                                                                                                        smallshield])
+                                                                                                        Bandage])
 Waiting_Room_2 = Room('2nd Floor Waiting Room', None, 'Laundry_Room', 'Security_Room', 'Delivery_Room', None, None,
                       "This room looks like an even"
                       "better waiting rooms with "
@@ -291,7 +291,7 @@ DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, No
                                                                                     "It appears a doctor used to "
                                                                                     "stay here. "
                                                                                     "There is a "
-                                                                                    "door west.", [hugeshield,
+                                                                                    "door west.", [medkit,
                                                                                                    AssaultRifle()])
 
 
@@ -301,18 +301,17 @@ player = Player(LOBBY)
 playing = True
 inventory = ['inventory', 'i']
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
-prick_up = ['pick up', 'grab']
+short_directions = ['n', 's', 'e', 'w', 'u', 'd']
+pick_up = ['pick up', 'grab']
 
-command = input(">_")
-
-if command.lower() in short_directions:
-    pos = short_directions.index(command.lower())
-    command = directions[pos]
 
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
     command = input(">_")
+    if command.lower() in short_directions:
+        pos = short_directions.index(command.lower())
+        command = directions[pos]
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif command.lower() in directions:
@@ -325,8 +324,8 @@ while playing:
         print("Command Not Found")
 
     if "pickup" in command.lower() or 'grab' in command.lower():
-        player.inventory.append(self.current_location.item)
+        player.inventory.append(player.current_location.item)
         print("Your player picked up the %s" % player.current_location.item)
-        player.self.current_location.item = None
+        player.current_location.item = None
 
 
