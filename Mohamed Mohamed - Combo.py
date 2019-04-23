@@ -141,7 +141,7 @@ class Bandage(Health):
 
     def heal_health(self):
         self.durability -= 1
-        self.Health += 50
+        self.health += 50
 
 
 class MedKit(Health):
@@ -320,12 +320,11 @@ while playing:
             player.move(next_room)
         except KeyError:
             print("I can't go that way")
-    else:
-        print("Command Not Found")
 
-    if "pickup" in command.lower() or 'grab' in command.lower():
+    elif "pickup" in command.lower() or 'grab' in command.lower():
         player.inventory.append(player.current_location.item)
-        print("Your player picked up the %s" % player.current_location.item)
+        print("Your player picked up the %s" % player.current_location.item.name.lower())
         player.current_location.item = None
 
-
+    else:
+        print("Command Not Found")
