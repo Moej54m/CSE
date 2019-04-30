@@ -1,4 +1,5 @@
 import csv
+def reverse_it(string):
 
 with open("Book1.csv") as old_csv:
     with open("MyNewFile.csv", 'w', newline='') as new_CSV:
@@ -35,7 +36,7 @@ def divisible_by _3(num: str):
         return True
     return False
 
-    
+
     def all_16_digits(num: str):
         if len(num) == 16:
             return True
@@ -58,3 +59,11 @@ def divisible_by _3(num: str):
 #         # print(old_number)
 # print("OK")
 #
+
+def reverse_it(string):
+    print(string[0:9:2])
+
+def valid_card_number(num: str):
+    ?????????
+
+print(valid_card_number("6854429810265090"))

@@ -1,3 +1,4 @@
+
 world_map = {
     'LOBBY': {
         'NAME': "Lobby",
@@ -119,18 +120,21 @@ world_map = {
             'EAST': 'Laundry Room'
         }
     },
-    'DOCTOR_ROOM'
-    'NAME': "The Doctor Room",
+    'DOCTOR_ROOM': {
+        'NAME': "The Doctor Room",
         'DESCRIPTION': "There are a lot of computers and telephones there. It appears a doctor used to stay here. "
                        "There is a door west.",
         'PATHS': {
-            'WEST': 'Laundry_Room'
+            'WEST': 'Laundry_Room',
+            'DOWN': 'Win Room'
         }
-    }
-}
-
-# Other Variables
-current_node = world_map['LOBBY']
+    },
+    'WIN ROOM'
+        'NAME': "The WIN ROOM",
+        'DESCRIPTION': "CONGRATS. You win the game! This is the hidden room that you needed to find to win!"
+        }
+    {
+{}
 directions = ["NORTH", "SOUTH", "EAST", "WEST", "UP", "DOWN"]
 playing = True
 

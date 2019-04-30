@@ -200,12 +200,14 @@ class Player(object):
         return globals()[name_of_room]
 
 
-LOBBY = Room('Lobby', None, None, 'WAITING_ROOM', 'STAIRS', None, None, " You are now in Nuketown hospital."
-                                                                                   " You are inside the lobby "
-                                                                                   "of the hospital."
-                                                                                   " There is one the door of each of"
-                                                                                   " the east, west, "
-                                                                                   "and north wall.", Knife())
+LOBBY = Room('Lobby', None, None, 'WAITING_ROOM', 'STAIRS', None, None, "Welcome! You are now in Nuketown hospital."
+                                                                        " You are inside the lobby "
+                                                                        "of the hospital."
+                                                                        " There is one door on each of"
+                                                                        " the east, west, "
+                                                                        "and north wall."
+                                                                        " Use the word grab to pick up unknown" 
+                                                                        " items that are in a room", Knife())
 FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the "
                                                                                  "first"
                                                                                  " floor. There are doors that are"
@@ -293,6 +295,9 @@ DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, No
                                                                                     "There is a "
                                                                                     "door west.", [medkit,
                                                                                                    AssaultRifle()])
+WIN_ROOM = Room('THE WIN ROOM', None, None, None, None, None, None, "CONGRATS! You win the game. "
+                                                                    "This was the secret room you needed to "
+                                                                    "find out to win. Thank You for playing.")
 
 
 player = Player(LOBBY)
@@ -325,6 +330,11 @@ while playing:
         player.inventory.append(player.current_location.item)
         print("Your player picked up the %s" % player.current_location.item.name.lower())
         player.current_location.item = None
+
+    elif command.lower() in ['i', 'inventory']:
+        print("Your current inventory is: %s",  player.current_location.item.name)
+    elif command.lower() in ['e', 'equip']:
+        print("You have eqipped some armor.")
 
     else:
         print("Command Not Found")
