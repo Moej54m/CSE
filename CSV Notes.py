@@ -1,9 +1,9 @@
 import csv
 def reverse_it(string):
 
-with open("Book1.csv") as old_csv:
-    with open("MyNewFile.csv", 'w', newline='') as new_CSV:
-        print("Writing file.... ")
+    with open("Book1.csv") as old_csv:
+        with open("MyNewFile.csv", 'w', newline='') as new_CSV:
+            print("Writing file.... ")
         reader = csv.reader(old_csv)
         writer = csv.writer(new_csv)
         for row in reader:
@@ -43,9 +43,9 @@ def divisible_by _3(num: str):
         else:
             print(" NOT EVERY NUMBER IS 16 DIGITS")
             return False
-
 # import csv# #
 # with open("Book1.csv") as old_csv:
+
 #     with open("MyNewFile.csv", 'w', newline='') as new_CSV:
 #         print("Writing file.... ")
 #         reader = csv.reader(old_csv)

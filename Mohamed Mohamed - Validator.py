@@ -10,8 +10,14 @@ def all_16_digits(num: str):
         return False
 
 
-list_num = list(number)
-for index in range(len(list_num)):
-    list_num[index] = int(list_num[index])
+def validate(num: str):
+    if not all_16_digits(num):
+        return False
 
-print(valid_card_number("6854429810265090"))
+
+print(validate("8248714205534850"))
+
+
+def drop_last_num(num: str):
+    list_num = list(num)
+    for index in range(len(list_num)):

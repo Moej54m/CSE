@@ -288,13 +288,15 @@ BACKYARD = Room('The Backyard', None, None, 'Laundry_Room', None, None, None, "T
                                                                               "it looks like a "
                                                                               "normal one with nice grass. "
                                                                               "There is a door to inside east.")
-DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, None, "There are a lot of computers "
-                                                                                    "and telephones there. "
-                                                                                    "It appears a doctor used to "
-                                                                                    "stay here. "
-                                                                                    "There is a "
-                                                                                    "door west.", [medkit,
-                                                                                                   AssaultRifle()])
+DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, 'WIN_ROOM', "There are a lot of "
+                                                                                          "computers "
+                                                                                          "and telephones there. "
+                                                                                          "It appears a doctor used to "
+                                                                                          "stay here. "
+                                                                                          "There is a "
+                                                                                          "door west.",
+                                                                                          [medkit,
+                                                                                          AssaultRifle()])
 WIN_ROOM = Room('THE WIN ROOM', None, None, None, None, None, None, "CONGRATS! You win the game. "
                                                                     "This was the secret room you needed to "
                                                                     "find out to win. Thank You for playing.")
@@ -321,14 +323,14 @@ while playing:
         playing = False
     elif command.lower() in directions:
         try:
-            next_room = player.find_next_room(command)
+            next_room = player.find_next_room
             player.move(next_room)
         except KeyError:
             print("I can't go that way")
 
     elif "pickup" in command.lower() or 'grab' in command.lower():
         player.inventory.append(player.current_location.item)
-        print("Your player picked up the %s" % player.current_location.item.name.lower())
+        print("Your player picked up the %s" % player.current_location.item.name)
         player.current_location.item = None
 
     elif command.lower() in ['i', 'inventory']:
