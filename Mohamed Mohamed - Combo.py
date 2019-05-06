@@ -317,7 +317,7 @@ while playing:
     print(player.current_location.description)
     command = input(">_")
     if command.lower() in short_directions:
-        pos = short_directions.index(command.lower())
+        pos = short_directnions.index(command.lower())
         command = directions[pos]
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False

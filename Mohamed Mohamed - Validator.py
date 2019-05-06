@@ -6,16 +6,6 @@
 # Add all the numbers together
 # The check digit (the last number of the card) is the amount that you would need to add to get a multiple of 10 (Modulo 10)
 
-def validate (num: str):
-    if not all_16_digits(num):
-        drop_num("3785162546340070")
-        reverse("3785162546340070")
-
-def reverse(num: str):
-    list_num = list(num)
-    print(list_num(:: -1))
-
-
 def all_16_digits(num: str):
     if len(num) == 16:
         print("Every card has 16 digits.")
@@ -26,3 +16,18 @@ def drop_num(num: str):
     for index in range(len(list_num)):
         list_num[index] = int(list_num[index])
         list_num.pop(15)
+        print("The last digit of the card was removed.")
+        print(list_num)
+        return list_num
+
+
+def validate (num: str):
+    if not all_16_digits(num):
+        drop_num("3785162546340070")
+        reverse("3785162546340070")
+
+def reverse(num: str):
+    list_num = list(num)
+    print(list_num(::-1))
+
+
