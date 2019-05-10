@@ -6,5 +6,6 @@ with open("Sales.csv", 'r') as old_csv:
         reader = csv.reader(old_csv)
         writer = csv.writer(new_csv)
         for row in reader:
-            row = row[13]
-            print(row)
+            if row[2] == "Fruits":
+                print(row[2])
+                print(row[13]
