@@ -231,13 +231,13 @@ KITCHEN = Room('The Kitchen', None, 'CAFETERIA', None, None, None, None,  "You s
 CAFETERIA = Room('The Cafeteria', None, 'WAITING_ROOM', None, None, None, None, "You see a lot of tables. There are"
                                                                                 " also many empty mini restaurants. "
                                                                                 "There is a "
-                                                                                "door south.", [Rock(),
-                                                                                                ShoulderPlates()])
+                                                                                "door south.", Rock())
 STAIRS = Room('Main Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', None, None, "These are the stairs"
                                                                                                "for  the first floor. "
                                                                                                "They appear to lead "
                                                                                                "up to the "
-                                                                                               "second floor.")
+                                                                                               "second floor.",
+                                                                                               ShoulderPlates())
 EMERGENCY_HALLWAY = Room('The Emergency Hallway', None, None, 'Waiting_Room_2', None, None, None, "This appears to be"
                                                                                                   " a hallway for all "
                                                                                                   "the emergencies "
@@ -319,22 +319,27 @@ while playing:
     if command.lower() in short_directions:
         pos = short_directions.index(command.lower())
         command = directions[pos]
-    if command.lower() in ['q', 'quit', 'exit']:
         playing = False
+    if command.lower() in ['q', 'quit', 'exit']:
+        quit(0)
     elif command.lower() in directions:
         try:
-            next_room = player.find_next_room
+            next_room = player.find_next_room(command.lower())
             player.move(next_room)
         except KeyError:
             print("I can't go that way")
 
     elif "pickup" in command.lower() or 'grab' in command.lower():
-        player.inventory.append(player.current_location.item)
-        print("Your player picked up the %s" % player.current_location.item.name)
-        player.current_location.item = None
+        try:
+            player.inventory.append(player.current_location.item.name)
+            print("Your player picked up the %s" % player.current_location.item.name)
+            player.current_location.item = None
+        except AttributeError:
+            print("You cannot pick anything up")
+            pass
 
     elif command.lower() in ['i', 'inventory']:
-        print("Your current inventory is: %s",  player.current_location.item.name)
+        print("Your current inventory is: %s" % player.inventory)
     elif command.lower() in ['e', 'equip']:
         print("You have eqipped some armor.")
 
