@@ -207,7 +207,10 @@ LOBBY = Room('Lobby', None, None, 'WAITING_ROOM', 'STAIRS', None, None, "Welcome
                                                                         " the east, west, "
                                                                         "and north wall."
                                                                         " Use the word grab to pick up unknown" 
-                                                                        " items that are in a room", Knife())
+                                                                        " items that are "
+                                                                        "in a room."
+                                                                        "To win the game, you must find a secret "
+                                                                        "room.", Knife())
 FIRST_HALLWAY = Room('The First Hallway', None, 'LOBBY', None, None, None, None, "You are now in the hallway of the "
                                                                                  "first"
                                                                                  " floor. There are doors that are"
@@ -232,12 +235,21 @@ CAFETERIA = Room('The Cafeteria', None, 'WAITING_ROOM', None, None, None, None, 
                                                                                 " also many empty mini restaurants. "
                                                                                 "There is a "
                                                                                 "door south.", Rock())
-STAIRS = Room('Main Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', None, None, "These are the stairs"
-                                                                                               "for  the first floor. "
-                                                                                               "They appear to lead "
-                                                                                               "up to the "
-                                                                                               "second floor.",
-                                                                                               ShoulderPlates())
+STAIRS = Room('1st Floor Stairs', None, None, 'Waiting_Room_2', 'Emergency_Room', 'EMERGENCY_HALLWAY', None, "These are"
+                                                                                                             " the "
+                                                                                                            "stairs "
+                                                                                                            "for "
+                                                                                                            "the "
+                                                                                                            "first "
+                                                                                                            "floor. "
+                                                                                                            "They "
+                                                                                                            "appear "
+                                                                                                            "to lead "
+                                                                                                            "up to "
+                                                                                                            "the "
+                                                                                                            "second "
+                                                                                                            "floor.",
+                                                                                                     ShoulderPlates())
 EMERGENCY_HALLWAY = Room('The Emergency Hallway', None, None, 'Waiting_Room_2', None, None, None, "This appears to be"
                                                                                                   " a hallway for all "
                                                                                                   "the emergencies "
@@ -273,7 +285,7 @@ BATHROOM = Room('The Bathroom', 'BALCONY', None,'Delivery_Room', None, None, Non
                                                                                    "the east.", Sword())
 BALCONY = Room('The Balcony', None, 'BATHROOM', None, None, None, None, "It is finally good to get some air. "
                                                                         "Unfortunately there is nothing there.")
-Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'Doctor Room', 'BACKYARD', None, None, "You see dryers "
+Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'DOCTOR_ROOM', 'BACKYARD', None, None, "You see dryers "
                                                                                                        "and washers."
                                                                                                        "There are "
                                                                                                        "clothes"
@@ -283,11 +295,12 @@ Laundry_Room = Room('The Laundry Room', 'Waiting_Room_2', None, 'Doctor Room', '
                                                                                                        "There is a door"
                                                                                                        " back "
                                                                                                        "north.", SMG())
-BACKYARD = Room('The Backyard', None, None, 'Laundry_Room', None, None, None, "There is nothing really "
-                                                                              "special about the backyard. "
-                                                                              "it looks like a "
-                                                                              "normal one with nice grass. "
-                                                                              "There is a door to inside east.")
+BACKYARD = Room('The Backyard', 'DOCTOR_ROOM', None, 'Laundry_Room', None, None, None, "There is nothing really "
+                                                                                       "special about the backyard. "
+                                                                                       "it looks like a "
+                                                                                       "normal one with nice grass. "
+                                                                                       "There is a door to "
+                                                                                       "inside east.")
 DOCTOR_ROOM = Room('The Doctor Room', None, None, None, 'Laundry Room', None, 'WIN_ROOM', "There are a lot of "
                                                                                           "computers "
                                                                                           "and telephones there. "

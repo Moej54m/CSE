@@ -1,6 +1,7 @@
 import csv
 
 
+print("Procesing...")
 with open("Sales.csv", 'r') as old_csv:
     with open("MyNewFile.csv", 'w', newline='') as new_csv:
         reader = csv.reader(old_csv)
@@ -26,5 +27,9 @@ with open("Sales.csv", 'r') as old_csv:
                     total += float(row[13])
                 if row[2] == "Clothes":
                     total += float(row[13])
-                print(total)
-                print(item_list)
+                if row[2] == "Beverages":
+                    total += float(row[13])
+                if row[2] == "Meat":
+                    total += float(row[13])
+
+        print("Fruits: %s" % totalA)
