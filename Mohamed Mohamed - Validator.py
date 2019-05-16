@@ -20,14 +20,15 @@ def drop_num(num: str):
         print(list_num)
         return list_num
 
+    def reverse(num: str):
+        list_num = list(num)
+        print(list_num(::-1))
 
-def validate (num: str):
+
+    def validate (num: str):
     if not all_16_digits(num):
         drop_num("3785162546340070")
         reverse("3785162546340070")
 
-def reverse(num: str):
-    list_num = list(num)
-    print(list_num(::-1))
 
 
