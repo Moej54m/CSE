@@ -23,55 +23,52 @@ with open("Sales.csv", 'r') as old_csv:
             item_type = row[2]
             if row[2] == "Fruits":
                 profit = float(row[13])
-                    for i in row[13]:
-                        Fruits += profit
-            if row[2] == "Clothes":
+                for i in row[13]:
+                    Fruits += profit
+            elif row[2] == "Clothes":
                 profit = float(row[13])
-                    for i in row[13]:
-                        Clothes += profit
-            if row[2] == "Beverages":
+                for i in row[13]:
+                    Clothes += profit
+            elif row[2] == "Beverages":
                 profit = float(row[13])
                 for i in row[13]:
                     Beverages += profit
-            if row[2] == "Meat":
+            elif row[2] == "Meat":
                 profit = float(row[13])
                 for i in row[13]:
-                        Meat += profit
-            if row[2] == "Office Supplies":
+                    Meat += profit
+            elif row[2] == "Office Supplies":
                 profit = float(row[13])
                 for i in row[13]:
-                        Office_Supplies += profit
-            if row[2] == "Cosmetics":
+                    Office_Supplies += profit
+            elif row[2] == "Cosmetics":
                 profit = float(row[13])
                 for i in row[13]:
-                        Cosmetics += profit
-            if row[2] == "Personal Care":
-                    profit = float(row[13])
-                    for i in row[13]:
-                        Personal_Care += profit
-            if row[2] == "Household":
-                    profit = float(row[13])
-                    for i in row[13]:
-                        Household += profit
-            if row[2] == "Baby Food":
-                    profit = float(row[13])
-                    for i in row[13]:
-                        Baby_Food += profit
-            if row[2] == "Vegetables":
+                    Cosmetics += profit
+            elif row[2] == "Personal Care":
                 profit = float(row[13])
-                    for i in row[13]:
-                        Vegetables += profit
-            if row[2] == "Snacks":
-                    profit = float(row[13])
-                    for i in row[13]:
-                        Snacks += profit
-            if row[2] == "Cereal":
-                    profit = float(row[13])
-                    for i in row[13]:
-                        Cereal += profit
-
-profit = [Fruits, Clothes, Meat, Beverages, Office_Supplies, Cosmetics, Personal_Care, Household, Baby_Food, Vegetables,
-          Snacks, Cereal]
+                for i in row[13]:
+                    Personal_Care += profit
+            elif row[2] == "Household":
+                profit = float(row[13])
+                for i in row[13]:
+                    Household += profit
+            elif row[2] == "Baby Food":
+                profit = float(row[13])
+                for i in row[13]:
+                    Baby_Food += profit
+            elif row[2] == "Vegetables":
+                profit = float(row[13])
+                for i in row[13]:
+                    Vegetables += profit
+            elif row[2] == "Snacks":
+                profit = float(row[13])
+                for i in row[13]:
+                    Snacks += profit
+            elif row[2] == "Cereal":
+                profit = float(row[13])
+                for i in row[13]:
+                    Cereal += profit
 
 
 print("The Fruit profit is %d" % Fruits)
@@ -86,6 +83,10 @@ print("The Baby_Food profit is %d" % Baby_Food)
 print("The Vegetables profit is %d" % Vegetables)
 print("The Snacks profit is %d" % Snacks)
 print("The Cereal profit is %d" % Cereal)
+
+profit = [Fruits, Clothes, Meat, Beverages, Office_Supplies, Cosmetics, Personal_Care, Household, Baby_Food, Vegetables,
+          Snacks, Cereal]
+
 
 if max(profit) == Fruits:
     print("The most profitable are Fruit")
