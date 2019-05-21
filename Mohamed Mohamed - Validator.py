@@ -32,5 +32,3 @@ def valid_card_number(num: str):
 
 
 
-
-
